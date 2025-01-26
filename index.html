@@ -78,6 +78,8 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         .btn:hover {
             background-color: #e6554b;
@@ -124,15 +126,14 @@
             <h2>Basic Plan</h2>
             <p>Get access to 100GB of high-quality content, with monthly updates and priority support.</p>
             <p class="price">$5</p>
-            <a href="#" class="btn">Buy Now</a>
-            <br><br>
-            <!-- PayPal Button -->
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <!-- Hidden PayPal form -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypalForm">
                 <input type="hidden" name="cmd" value="_s-xclick">
                 <input type="hidden" name="hosted_button_id" value="Z5Q3MEQA9NJ88">
                 <input type="hidden" name="currency_code" value="USD">
-                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Pay Now">
             </form>
+            <!-- Button linked to PayPal -->
+            <button class="btn" onclick="document.getElementById('paypalForm').submit()">Buy Now</button>
         </div>
         <div class="tile">
             <h2>Standard Plan</h2>
