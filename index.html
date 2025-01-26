@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium Service Plans</title>
@@ -13,61 +12,71 @@
             margin: 0;
             background: linear-gradient(135deg, #f0f0f0, #e1e1e1);
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #262626;
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         main {
             display: flex;
             justify-content: center;
-            padding: 40px;
+            padding: 50px 20px;
         }
         .container {
             max-width: 1200px;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
         .tile {
             background-color: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease;
         }
         .tile:hover {
             transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
         }
         .tile h2 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #ff6f61;
             margin-bottom: 20px;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .tile p {
             font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+            line-height: 1.8;
         }
         .price {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 600;
             color: #28a745;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 12px 30px;
+            border-radius: 30px;
             background-color: #ff6f61;
             color: white;
             text-decoration: none;
             font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: background-color 0.3s ease;
         }
         .btn:hover {
@@ -78,7 +87,28 @@
             color: white;
             padding: 20px;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .tile {
+            animation: fadeIn 0.8s ease both;
+        }
+        .container .tile:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .container .tile:nth-child(3) {
+            animation-delay: 0.4s;
         }
     </style>
 </head>
@@ -95,6 +125,14 @@
             <p>Get access to 100GB of high-quality content, with monthly updates and priority support.</p>
             <p class="price">$5</p>
             <a href="#" class="btn">Buy Now</a>
+            <br><br>
+            <!-- PayPal Button -->
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="Z5Q3MEQA9NJ88">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Pay Now">
+            </form>
         </div>
         <div class="tile">
             <h2>Standard Plan</h2>
