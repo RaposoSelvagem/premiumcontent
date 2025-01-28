@@ -127,12 +127,12 @@
             <p>Get access to 100GB of high-quality content, with photos and videos.</p>
             <p class="price">$3</p>
             <!-- Hidden PayPal form -->
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypalFormBasic">
               <input type="hidden" name="cmd" value="_s-xclick" />
               <input type="hidden" name="hosted_button_id" value="U9HU89946HT8C" />
               <input type="hidden" name="currency_code" value="USD" />
-              <!-- Button linked to PayPal -->
-            <button class="btn" onclick="document.getElementById('paypalFormBasic').submit()">Buy Now</button>
+              </form>
+             <button class="btn" onclick="document.getElementById('paypalFormBasic').submit()">Buy Now</button>
         </div>
 
     <div class="tile">
